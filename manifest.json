@@ -1,0 +1,25 @@
+{
+    "name": "Keep my CPI alive",
+    "version": "0.0.1",
+    "description": "Sends Ping to CPI tabs to keep it alive",
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://code.jquery.com/ https://stackpath.bootstrapcdn.com/; object-src 'self'",
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "browser_action": {
+        "default_title": "KeepCPIAlive",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.hana.ondemand.com/itspaces/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}

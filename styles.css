@@ -1,0 +1,5 @@
+body {			/* Change width and height to own preferences */
+	width: 250px;
+	height: 20px;
+	overflow-x: hidden;
+}
