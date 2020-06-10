@@ -6,11 +6,24 @@
     "content_security_policy": "script-src 'self' https://code.jquery.com/ https://stackpath.bootstrapcdn.com/; object-src 'self'",
     "permissions": [
         "tabs",
-        "storage"
+        "storage",
+        "http://*/*", 
+        "https://*/*"
     ],
+    "background": {
+        "persistent": false,
+        "scripts": [
+            "js/worker_proxy.js"
+        ]
+    },
     "browser_action": {
         "default_title": "KeepCPIAlive",
         "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
     },
     "content_scripts": [
         {
@@ -18,8 +31,14 @@
                 "https://*.hana.ondemand.com/itspaces/*"
             ],
             "js": [
-                "content.js"
+                "js/worker_proxy.js",
+                "js/content.js",
+                "js/worker.js"
             ]
         }
+    ],
+    "web_accessible_resources": [
+        "worker_proxy.html",
+        "worker.js"
     ]
 }
