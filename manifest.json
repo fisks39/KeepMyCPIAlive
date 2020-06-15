@@ -6,9 +6,7 @@
     "content_security_policy": "script-src 'self' https://code.jquery.com/ https://stackpath.bootstrapcdn.com/; object-src 'self'",
     "permissions": [
         "tabs",
-        "storage",
-        "http://*/*", 
-        "https://*/*"
+        "storage"
     ],
     "background": {
         "persistent": false,
